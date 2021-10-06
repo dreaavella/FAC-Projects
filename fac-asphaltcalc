@@ -1,0 +1,31 @@
+def main():
+    # The responses that can be put in as a 'yes' to the restart question.
+    yeslist = ['yes','Yes','y','Y']
+    # Explaining the purpose of the program and the variables needed to have it run.
+    print('\nThis program will determine the tonnage of asphalt by having the user enter the asphalt depth and square yards of the project.\n')
+    # This is asking the user to enter the depth of the asphalt.    
+    depth = float(input('Enter the depth of the asphalt in inches: '))
+    # This is asking the user to enter the square yards of the project.
+    sy = float(input('Enter the square yards found on the work contract: '))
+    # This is calculating the depth (or result) by having the depth be multiplied by 110 lbs.
+    result = (depth * 110)
+    # This is calculating the second result (or result_two) needed to calculate tonnage by multiplying result by sy (square yards).
+    result_two = (result * sy)
+    # Finally calculating the tonnage by dividing result_two by 2000.
+    tonnage = ( result_two / 2000)
+    # Printing the tonnage result with a comma, rounded to two decimal places.
+    print(f'The tonnage is {tonnage:,.2f}', end = '')
+    # Restarting the program by prompting the user to answer the restart question with one of the responses in the yeslist shown above.
+    restart = input('\nDo you wish to calculate again? Enter Y for yes. ').lower()
+    
+    if restart in yeslist:
+        
+        main()
+    # If the user does not answer the restart question with a response from the yeslist, the program will print the below statement and exit.    
+    else:
+
+        print('Calculations are complete.')
+        
+        exit()
+        
+main()
